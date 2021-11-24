@@ -1,0 +1,41 @@
+﻿@model StudentSaveFormDemo.Models.EntityFramework.TblStudents
+@{
+    ViewBag.Title = "AddStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>FirstName</label>
+        <input type="text" class="form-control" name="StudentFirstName" />
+    </div>
+    <div style="margin-top:10px">
+        <label>LastName</label>
+        <input type="text" class="form-control" name="StudentLastName" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Note</label>
+        <input type="text" class="form-control" name="StudentNote" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Foto</label>
+        <input type="text" class="form-control" name="StudentFoto" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Club</label>
+        @Html.DropDownListFor(c=>c.TblClubs.ClubID,(List<SelectListItem>)ViewBag.vl,new { @class ="form-control" })
+    </div>
+    <div style="margin-top:10px">
+        <label>Gender</label>
+        <select name="StudentGender">
+            <option value=""> </option>
+            <option>Male </option>
+            <option>Fmale </option>
+        </select>
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-info"> Add </button>
+    </div>
+</form>
+
+

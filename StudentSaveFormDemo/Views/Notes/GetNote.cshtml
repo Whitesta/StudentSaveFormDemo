@@ -1,0 +1,50 @@
+﻿@model StudentSaveFormDemo.Models.EntityFramework.TblNotes
+@{
+    ViewBag.Title = "GetNote";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("GetNote", "Notes", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.LessonID)
+        @Html.TextBoxFor(m => m.LessonID, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StudentID)
+        @Html.TextBoxFor(m => m.StudentID, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Exam1)
+        @Html.TextBoxFor(m => m.Exam1, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Exam2)
+        @Html.TextBoxFor(m => m.Exam2, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Exam3)
+        @Html.TextBoxFor(m => m.Exam3, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Project)
+        @Html.TextBoxFor(m => m.Project, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Avarage)
+        @Html.TextBoxFor(m => m.Avarage, new {@Value= @ViewBag.avrg, @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.State)
+        @Html.TextBoxFor(m => m.State, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.NoteID)
+    <div style="margin-top:10px">
+        <button type="submit" name="Islem" value="Calculate" class="btn btn-default">Calculate </button><br />
+        <button type="submit" name="Islem" value="NoteUpdate" class="btn btn-default">Note Update</button> <br /><br />
+       
+    </div>
+}
+
+

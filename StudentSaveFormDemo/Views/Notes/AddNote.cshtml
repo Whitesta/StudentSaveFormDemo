@@ -1,0 +1,45 @@
+﻿@using StudentSaveFormDemo.Models.EntityFramework 
+@model StudentSaveFormDemo.Models.EntityFramework.TblNotes
+@{
+    ViewBag.Title = "AddNote";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form  class="form-group" method="post">
+    <div>
+        <label>Lesson Name</label>
+        <input type="text" class="form-control" name="LessonID" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Student Name</label>
+        <input type="text" class="form-control" name="StudentID" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Exam 1</label>
+        <input type="text" class="form-control" name="Exam1" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Exam 2</label>
+        <input type="text" class="form-control" name="Exam2" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Exam 3</label>
+        <input type="text" class="form-control" name="Exam3" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Project</label>
+        <input type="text" class="form-control" name="Project" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Avarage</label>
+        <input type="text" class="form-control" name="Avarage" />
+    </div>
+        <div style="margin-top:10px">
+            <label>State</label>
+            <input type="text" class="form-control" name="State" />
+        </div>
+        <div style="margin-top:10px">
+           <button class="btn btn-info">Add </button>
+        </div>
+</form>
+

@@ -1,0 +1,18 @@
+﻿@model StudentSaveFormDemo.Models.EntityFramework.TblLessons
+@{
+    ViewBag.Title = "GetLesson";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "Lessons", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.LessonAd)
+        @Html.TextBoxFor(m => m.LessonAd, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.LessonId)
+    <div style="margin-top:10px">
+        <button class="btn btn-primary"> Update</button>
+    </div>
+}
+

@@ -1,0 +1,31 @@
+﻿@using StudentSaveFormDemo.Models.EntityFramework,
+@model List<TblClubs>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr> 
+        <th>Club Id</th>
+        <th>Club Name</th>
+        <th>Manage</th>
+    
+    </tr>
+    <tbody>
+        @foreach (var clubs in Model)
+        {
+            <tr>
+                <td>@clubs.ClubID</td>
+                <td>@clubs.ClubName</td>
+                <td>
+                    <a href="/Clubs/Delete/@clubs.ClubID" class="btn btn-danger"> Delete</a>
+                    <a href="/Clubs/GetClub/@clubs.ClubID" class="btn btn-success"> Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Clubs/ClubAdd" class="btn btn-primary"> Add New Club</a>
+
+

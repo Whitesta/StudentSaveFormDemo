@@ -1,0 +1,43 @@
+﻿@using StudentSaveFormDemo.Models.EntityFramework;
+@model List<TblNotes>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Note Id </th>
+        <th>Lesson  </th>
+        <th>Student  </th>
+        <th>Exam1 </th>
+        <th>Exam2 </th>
+        <th>Exam3 </th>
+        <th>Project </th>
+        <th>Avarage </th>
+        <th>State </th>
+        <th>Manage</th>
+    </tr>
+    <tbody>
+        @foreach (var note in Model)
+        {
+            <tr>
+                <td>@note.NoteID</td>
+                <td>@note.TblLessons.LessonAd</td>
+                <td>@note.StudentID</td>
+                <td>@note.Exam1</td>
+                <td>@note.Exam2</td>
+                <td>@note.Exam3</td>
+                <td>@note.Project</td>
+                <td>@note.Avarage</td>
+                <td>@note.State</td>
+                <td>
+                    <a href="/Notes/Delete/@note.NoteID" class="btn btn-danger"> Delete</a>
+                    <a href="/Notes/GetNote/@note.NoteID" class="btn btn-success"> Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Notes/AddNote" class="btn btn-primary">Add New Exam Notes</a>
+

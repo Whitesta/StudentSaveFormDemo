@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Calculator</h2>
+
+<form class="form-group" method="post">
+    <div>
+        Number1:  <input type="text" name="number1" id="number1" style="margin-bottom:10px" /><br />
+        Number2:  <input type="text" name="number2" id="number2" style="margin-bottom:10px" /><br />
+        
+            
+            <button class="btn btn-info" name="plus" value="@ViewBag.pls"> Plus</button>
+            Result: @ViewBag.pls
+        
+        <div style="margin-top:10px">
+            <button class="btn btn-info" name="minus" value="@ViewBag.mns"> Minus</button>
+            Result: @ViewBag.mns
+        </div>
+    </div>
+</form>
+

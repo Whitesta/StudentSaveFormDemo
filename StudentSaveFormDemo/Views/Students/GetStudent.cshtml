@@ -1,0 +1,40 @@
+﻿@model StudentSaveFormDemo.Models.EntityFramework.TblStudents
+@{
+    ViewBag.Title = "GetStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Update", "Students", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.StudentFirstName)
+        @Html.TextBoxFor(m => m.StudentFirstName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StudentLastName)
+        @Html.TextBoxFor(m => m.StudentLastName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StudentNote)
+        @Html.TextBoxFor(m => m.StudentNote, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StudentFoto)
+        @Html.TextBoxFor(m => m.StudentFoto, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StudentClub)
+        @* @Html.TextBoxFor(m => m.StudentClub, new { @class = "form-control" })*@
+        @Html.DropDownListFor(c => c.TblClubs.ClubID, (List<SelectListItem>)ViewBag.vl, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StudentGender)
+        @Html.TextBoxFor(m => m.StudentGender, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.StudentID)
+    <div style="margin-top:10px">
+        <button class="btn btn-primary"> Update</button>
+    </div>
+}
+
